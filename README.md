@@ -9,3 +9,7 @@ Small app to create a simple Java server on Raspberry Pi and then send requests 
 
 #### Stopwatch Android App
 Simple stopwatch app in Android to demonstrate working with Handlers and activity life cycle.
+
+
+#### IMDb Search Android App
+Android client application for the IMDb server provided by **OMDb(www.omdbapi.com)**
