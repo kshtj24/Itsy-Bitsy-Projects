@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IMDb Search</string>
+    <string name="searchBoxHint">Enter movie name</string>
+    <string name="searchBtnContentDes">Search Icon</string>
 </resources>
