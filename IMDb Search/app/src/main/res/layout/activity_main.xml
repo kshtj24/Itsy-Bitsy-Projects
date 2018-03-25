@@ -33,16 +33,17 @@
     </GridLayout>
 
     <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/search_bar">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@id/search_bar">-->
 
-        <LinearLayout
-            android:id="@+id/grid"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="2" />
+    <GridView
+        android:id="@+id/searchResultGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_bar"
+        android:numColumns="2"
+        android:orientation="horizontal" />
 
     <!--</ScrollView>-->
 

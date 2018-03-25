@@ -5,8 +5,11 @@ package apps.mrj.imdbsearch;
  */
 
 public class Constants {
-    static String MAIN_URL_HEAD = "http://www.omdbapi.com/?apikey=995e2440&s=";
-    static String MAIN_URL_TAIL = "&plot=full&r=json";
+    static String SEARCH_URL_HEAD = "http://www.omdbapi.com/?apikey=995e2440&s=";
+    static String SEARCH_URL_TAIL = "&plot=full&r=json";
+    static String ITEM_URL_HEAD = "http://omdbapi.com/?apikey=995e2440&i=";
+    static String ITEM_URL_TAIL = "&plot=full";
+    static String JSONEXCEPTION = "JSONException";
     static String REQUEST_TAG = "com.apps.mrj.imdbsearch";
     static String PLOT = "full";
 }
