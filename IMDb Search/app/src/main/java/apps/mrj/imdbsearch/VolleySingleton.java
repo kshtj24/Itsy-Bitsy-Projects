@@ -39,7 +39,7 @@ public class VolleySingleton {
         });
     }
 
-    public static synchronized VolleySingleton getInstance(Context context) {
+    static synchronized VolleySingleton getInstance(Context context) {
         if (instance == null) {
             instance = new VolleySingleton(context);
         }
@@ -47,11 +47,11 @@ public class VolleySingleton {
         return instance;
     }
 
-    public ImageLoader getImageLoader() {
+    ImageLoader getImageLoader() {
         return imageLoader;
     }
 
-    public RequestQueue getRequestQueue() {
+    RequestQueue getRequestQueue() {
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(context.getApplicationContext());
         }
@@ -59,7 +59,7 @@ public class VolleySingleton {
         return requestQueue;
     }
 
-    public <T> void addToRequestQueue(Request<T> request, String tag) {
+    <T> void addToRequestQueue(Request<T> request, String tag) {
         request.setTag(tag);
         getRequestQueue().add(request);
     }

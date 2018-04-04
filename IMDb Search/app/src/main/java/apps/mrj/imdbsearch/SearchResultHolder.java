@@ -11,40 +11,43 @@ public class SearchResultHolder {
     private String type;
     private String posterURL;
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(String str){
+    public void setTitle(String str) {
         title = str;
     }
 
-    public String getImdbID(){
+    String getImdbID() {
         return imdbID;
     }
-    public void setImdbID(String str){
+
+    void setImdbID(String str) {
         imdbID = str;
     }
 
-    public String getType(){
+    String getType() {
         return type;
     }
-    public void setType(String str){
+
+    void setType(String str) {
         type = str;
     }
 
-    public String getPosterURL(){
+    String getPosterURL() {
         return posterURL;
     }
-    public void setPosterURL(String str){
+
+    void setPosterURL(String str) {
         posterURL = str;
     }
 
-
-    public String getYear(){
+    String getYear() {
         return year;
     }
-    public void setYear(String str){
+
+    void setYear(String str) {
         year = str;
     }
 }

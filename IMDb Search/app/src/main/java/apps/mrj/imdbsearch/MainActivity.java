@@ -2,6 +2,7 @@ package apps.mrj.imdbsearch;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -14,8 +15,8 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -32,7 +33,7 @@ import static apps.mrj.imdbsearch.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    ProgressDialog progressDialog;
+    ProgressBar progressBar;
     boolean isSearch = false;
 
     @Override
@@ -48,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
         isSearch = true;
     }
 
-    public void getMovieData(View view) {
-        ImageView imageView = view.findViewById(R.id.poster);
-        String itemID = imageView.getContentDescription().toString();
+    public void getMovieData(String itemID) {
+        //view.getTag().getClass().getDeclaredFields()[0]).getText();
+        // /ImageView imageView = view.findViewById(R.id.poster);
+        //String itemID = imageView.getContentDescription().toString();
         String itemURL = ITEM_URL_HEAD + itemID + ITEM_URL_TAIL;
         createJSONRequest(itemURL);
         isSearch = false;
@@ -61,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
         Response.Listener<JSONObject> response = new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Toast.makeText(MainActivity.this, "Response received", Toast.LENGTH_SHORT).show();
+                Log.i("Response", "Received");
                 try {
                     parseJSONResponse(response);
                 } catch (JSONException ex) {
-                    Log.e(JSONEXCEPTION, ex.getMessage());
+                    Log.e(JSON_EXCEPTION, ex.getMessage());
                 }
             }
         };
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         Response.ErrorListener error = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, "Error occured", Toast.LENGTH_SHORT).show();
+                Log.e("VolleyError", error.getMessage());
             }
         };
 
@@ -103,56 +105,39 @@ public class MainActivity extends AppCompatActivity {
             searchResultGrid.setAdapter(searchResultAdapter);
 
         } else {
-            MovieDataHolder movieDataHolder = new MovieDataHolder();
-            movieDataHolder.setTitle(response.getString("Title"));
-            movieDataHolder.setYear(response.getString("Year"));
-            movieDataHolder.setRated(response.getString("Rated"));
-            movieDataHolder.setReleased(response.getString("Released"));
-            movieDataHolder.setRuntime(response.getString("Runtime"));
-            movieDataHolder.setGenre(response.getString("Genre"));
-            movieDataHolder.setDirector(response.getString("Director"));
-            movieDataHolder.setWriter(response.getString("Writer"));
-            movieDataHolder.setActors(response.getString("Actors"));
-            movieDataHolder.setPlot(response.getString("Plot"));
-            movieDataHolder.setLanguage(response.getString("Language"));
-            movieDataHolder.setCountry(response.getString("Country"));
-            movieDataHolder.setAwards(response.getString("Awards"));
-            movieDataHolder.setPosterURL(response.getString("Poster"));
-            movieDataHolder.setRatings(response.getString("Ratings"));
-            movieDataHolder.setImdbRating(response.getString("imdbRating"));
-            movieDataHolder.setImdbVotes(response.getString("imdbVotes"));
-            movieDataHolder.setImdbID(response.getString("imdbID"));
-            movieDataHolder.setType(response.getString("Type"));
-            movieDataHolder.setDvd(response.getString("DVD"));
-            movieDataHolder.setBoxOfficeCollection(response.getString("BoxOffice"));
-            movieDataHolder.setProduction(response.getString("Production"));
-            movieDataHolder.setWebsite(response.getString("Website"));
-
-            Toast.makeText(MainActivity.this, "Movie data updated", Toast.LENGTH_LONG).show();
-            createItemDisplayDialog(movieDataHolder);
+            fillMovieDataHolder(response);
         }
     }
 
+    void fillMovieDataHolder(JSONObject response) throws JSONException {
+        MovieDataHolder movieDataHolder = new MovieDataHolder();
+        movieDataHolder.setTitle(response.getString("Title"));
+        movieDataHolder.setYear(response.getString("Year"));
+        movieDataHolder.setRated(response.getString("Rated"));
+        movieDataHolder.setReleased(response.getString("Released"));
+        movieDataHolder.setRuntime(response.getString("Runtime"));
+        movieDataHolder.setGenre(response.getString("Genre"));
+        movieDataHolder.setDirector(response.getString("Director"));
+        movieDataHolder.setWriter(response.getString("Writer"));
+        movieDataHolder.setActors(response.getString("Actors"));
+        movieDataHolder.setPlot(response.getString("Plot"));
+        movieDataHolder.setLanguage(response.getString("Language"));
+        movieDataHolder.setCountry(response.getString("Country"));
+        movieDataHolder.setAwards(response.getString("Awards"));
+        movieDataHolder.setPosterURL(response.getString("Poster"));
+        movieDataHolder.setRatings(response.getString("Ratings"));
+        movieDataHolder.setImdbRating(response.getString("imdbRating"));
+        movieDataHolder.setImdbVotes(response.getString("imdbVotes"));
+        movieDataHolder.setImdbID(response.getString("imdbID"));
+        movieDataHolder.setType(response.getString("Type"));
+        movieDataHolder.setDvd(response.getString("DVD"));
+        movieDataHolder.setBoxOfficeCollection(response.getString("BoxOffice"));
+        movieDataHolder.setProduction(response.getString("Production"));
+        movieDataHolder.setWebsite(response.getString("Website"));
 
-    private void createItemDisplayDialog(MovieDataHolder movieDataHolder) {
-        Dialog dialog = new Dialog(MainActivity.this);
-        dialog.setContentView(R.layout.item_display);
-
-        ImageView imageView = dialog.findViewById(R.id.itemPoster);
-        TextView name = dialog.findViewById(R.id.itemName);
-        TextView year = dialog.findViewById(R.id.itemYear);
-        TextView rating = dialog.findViewById(R.id.itemRating);
-        TextView collection = dialog.findViewById(R.id.itemBoxOfficeCollection);
-        TextView plot = dialog.findViewById(R.id.itemPlot);
-
-        SearchResultAdapter.createPosterRequest(movieDataHolder.getPosterURL(), imageView);
-        name.setText(movieDataHolder.getTitle());
-        year.setText(movieDataHolder.getYear());
-        rating.setText(movieDataHolder.getRated());
-        collection.setText(movieDataHolder.getBoxOfficeCollection());
-        plot.setText(movieDataHolder.getPlot());
-
-        dialog.show();
+        Log.i("Movie ", "data updated");
+        Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+        intent.putExtra("instance", movieDataHolder);
+        startActivity(intent);
     }
-
 }

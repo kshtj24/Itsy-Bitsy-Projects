@@ -56,21 +56,32 @@ public class SearchResultAdapter extends BaseAdapter {
     @SuppressLint("SetTextI18n")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        ViewHolder holder;
         if (view == null) {
+            holder = new ViewHolder();
             view = inflater.inflate(R.layout.search_results_view, viewGroup, false);
-            ImageView imageView = view.findViewById(R.id.poster);
-            TextView textView = view.findViewById(R.id.name_and_year);
-
-            textView.setText(data.get(i).getTitle() + " (" + data.get(i).getYear() + ")");
-            imageView.setContentDescription(data.get(i).getImdbID());
-            createPosterRequest(data.get(i).getPosterURL(), imageView);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mInstance.getMovieData(view);
-                }
-            });
+            holder.poster = view.findViewById(R.id.poster);
+            holder.title = view.findViewById(R.id.name_and_year);
+            view.setTag(holder);
+        } else {
+            holder = (ViewHolder) view.getTag();
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mInstance.getMovieData(((ViewHolder) view.getTag()).poster.getContentDescription().toString());
+            }
+        });
+
+        holder.title.setText(data.get(i).getTitle() + " (" + data.get(i).getYear() + ")");
+        holder.poster.setContentDescription(data.get(i).getImdbID());
+        if (data.get(i).getPosterURL().equals("N/A")) {
+            holder.poster.setImageResource(R.drawable.ic_image_na);
+            Log.e("NoImageFor", data.get(i).getTitle());
+        } else
+            createPosterRequest(data.get(i).getPosterURL(), holder.poster);
+
         return view;
     }
 
@@ -84,9 +95,14 @@ public class SearchResultAdapter extends BaseAdapter {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(mContext, "Error occured in poster", Toast.LENGTH_SHORT).show();
                 Log.e("ErrorIn", error.getMessage());
             }
         });
+    }
+
+    //View Holder class for filling the view
+    class ViewHolder {
+        TextView title;
+        ImageView poster;
     }
 }
