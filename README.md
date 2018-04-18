@@ -12,4 +12,4 @@ Simple stopwatch app in Android to demonstrate working with Handlers and activit
 
 
 #### IMDb Search Android App
-Android client application for the IMDb server provided by **OMDb(www.omdbapi.com)**
+Android client application for the IMDb server provided by **OMDb(www.omdbapi.com)**. Application is divided in two activities one of which displays the results for corresponding search and other activity(item details activity) is called when any one or the results is clicked. Google's Volley library is used for REST API calls, UI mainly consists of GridView, ScrollView, TextViews and ImageViews. 
