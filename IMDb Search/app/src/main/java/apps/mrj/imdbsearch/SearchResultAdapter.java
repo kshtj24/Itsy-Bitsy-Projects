@@ -21,7 +21,7 @@ import com.android.volley.toolbox.ImageLoader;
 import java.util.ArrayList;
 
 /**
- * Created by kshtj on 24-03-2018.
+ * File created by kshtj on 24-03-2018
  */
 
 public class SearchResultAdapter extends BaseAdapter {
@@ -95,7 +95,7 @@ public class SearchResultAdapter extends BaseAdapter {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("ErrorIn", error.getMessage());
+                Log.e("ErrorIn", error.toString());
             }
         });
     }

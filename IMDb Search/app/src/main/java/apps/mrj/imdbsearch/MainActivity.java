@@ -1,22 +1,14 @@
 package apps.mrj.imdbsearch;
 
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.JsonReader;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.AbsListView;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -26,27 +18,64 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import static apps.mrj.imdbsearch.Constants.*;
+import static apps.mrj.imdbsearch.Constants.ITEM_URL_HEAD;
+import static apps.mrj.imdbsearch.Constants.ITEM_URL_TAIL;
+import static apps.mrj.imdbsearch.Constants.JSON_EXCEPTION;
+import static apps.mrj.imdbsearch.Constants.PAGE;
+import static apps.mrj.imdbsearch.Constants.SEARCH_URL_HEAD;
+import static apps.mrj.imdbsearch.Constants.SEARCH_URL_TAIL;
+
+/**
+ * File created by kshtj on 24-03-2018
+ */
 
 public class MainActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
     boolean isSearch = false;
+    int pageNo = 1;
+    int maxPages = 0;
+    GridView searchResultGrid;
+    EditText searchBox;
+    ArrayList<SearchResultHolder> searchResultHolders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        searchResultHolders = new ArrayList<>();
+        searchResultGrid = findViewById(R.id.searchResultGrid);
+        searchBox = findViewById(R.id.searchBox);
+
+        searchResultGrid.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView absListView, int i) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView absListView, int firstVisibleItem, int visibleItemCount, int totaItemCount) {
+                if (firstVisibleItem + visibleItemCount >= totaItemCount) {
+                    pageNo++;
+                    if (pageNo <= maxPages) {
+                        String updatedSearchURL = SEARCH_URL_HEAD + searchBox.getText().toString().replace(" ", "+") + PAGE + pageNo + SEARCH_URL_TAIL;
+                        createJSONRequest(updatedSearchURL);
+                    }
+                }
+            }
+        });
     }
 
     public void searchButtonOnClick(View view) {
-        EditText searchBox = findViewById(R.id.searchBox);
         String searchURL = SEARCH_URL_HEAD + searchBox.getText().toString().replace(" ", "+") + SEARCH_URL_TAIL;
         createJSONRequest(searchURL);
+        pageNo = 1;
         isSearch = true;
+        searchResultGrid.setAdapter(null);
+        searchResultHolders.clear();
     }
 
     public void getMovieData(String itemID) {
@@ -75,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         Response.ErrorListener error = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("VolleyError", error.getMessage());
+                Log.e("VolleyError", error.toString());
             }
         };
 
@@ -86,7 +115,10 @@ public class MainActivity extends AppCompatActivity {
 
     void parseJSONResponse(JSONObject response) throws JSONException {
         if (isSearch) {
-            ArrayList<SearchResultHolder> searchResultHolders = new ArrayList<>();
+            //Getting the number of results and calculating the total number of pages required to display 10 elements at a time
+            maxPages = Math.round(response.getInt("totalResults") / 10);
+
+            //Getting the detail results in the current response
             JSONArray jsonArray = response.getJSONArray("Search");
             for (int i = 0; i < jsonArray.length(); i++) {
                 SearchResultHolder tempHolder = new SearchResultHolder();
@@ -100,9 +132,14 @@ public class MainActivity extends AppCompatActivity {
 
                 searchResultHolders.add(tempHolder);
             }
-            GridView searchResultGrid = findViewById(R.id.searchResultGrid);
             SearchResultAdapter searchResultAdapter = new SearchResultAdapter(getApplicationContext(), searchResultHolders, MainActivity.this);
-            searchResultGrid.setAdapter(searchResultAdapter);
+            if (searchResultGrid.getAdapter() == null) {
+                searchResultGrid.setAdapter(searchResultAdapter);
+                Log.e("Adapter", "set");
+            } else {
+                searchResultAdapter.notifyDataSetChanged();
+                Log.e("Dataset", "Notified");
+            }
 
         } else {
             fillMovieDataHolder(response);
