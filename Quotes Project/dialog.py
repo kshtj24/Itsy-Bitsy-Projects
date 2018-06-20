@@ -17,21 +17,20 @@ import wx.xrc
 class QuoteDialog ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 419,319 ), style = wx.DEFAULT_DIALOG_STYLE )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Design Quotes", pos = wx.DefaultPosition, size = wx.Size( 419,230 ), style = wx.DEFAULT_DIALOG_STYLE )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetExtraStyle( wx.DIALOG_EX_CONTEXTHELP|wx.DIALOG_EX_METAL )
 		
 		container = wx.BoxSizer( wx.VERTICAL )
 		
-		self.titleText = wx.StaticText( self, wx.ID_ANY, u"Quote -", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE )
-		self.titleText.Wrap( -1 )
+		self.titleText = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,-1 ), wx.TE_WORDWRAP )
 		container.Add( self.titleText, 0, wx.ALL, 5 )
 		
-		self.quoteText = wx.StaticText( self, wx.ID_ANY, u"MyLabel", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE )
-		self.quoteText.Wrap( -1 )
+		self.quoteText = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,100 ), wx.TE_CHARWRAP|wx.TE_MULTILINE|wx.TE_RICH|wx.TE_WORDWRAP )
 		container.Add( self.quoteText, 0, wx.ALL, 5 )
 		
-		self.getButton = wx.Button( self, wx.ID_ANY, u"Click Me", wx.DefaultPosition, wx.DefaultSize, wx.BU_EXACTFIT )
+		self.getButton = wx.Button( self, wx.ID_ANY, u"Click Me", wx.DefaultPosition, wx.Size( 400,-1 ), wx.BU_EXACTFIT )
 		container.Add( self.getButton, 0, wx.ALL, 5 )
 		
 		
