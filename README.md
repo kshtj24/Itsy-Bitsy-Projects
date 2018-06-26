@@ -17,3 +17,6 @@ Android client application for the IMDb server provided by **OMDb(www.omdbapi.co
 
 #### Quotes Project
 Windows based Python application which works as a client for **Quotes on Design(quotesondesign.com/api-v4-0/)**. App uses requests, wxPython and bs4(BeautifulSoup) libraries to fetch the data in JSON format and then display it in a text box.
+
+#### PostGres SQL DB Handler
+***Ongoing work***. WPF Application to make basic changes to PostGres database without writing Scripts.
