@@ -1,5 +1,5 @@
 # Itsy Bitsy Projects
-Code pieces for proof of concepts and learning exercises on Raspberry Pi and Android platforms
+Applications, code pieces, proof of concepts and learning exercises for various platforms
 
 ### Projects Contained
 ------------------------------------------------------------------------------------------------------------------------------------------
