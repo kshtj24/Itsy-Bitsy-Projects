@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\users\kshitij.saxena\documents\visual studio 2017\Projects\SQL DB Handler\SQL DB Handler\obj\Debug\
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\
 SQL_DB_Handler
 none
 false
 DEBUG;TRACE
-c:\users\kshitij.saxena\documents\visual studio 2017\Projects\SQL DB Handler\SQL DB Handler\App.xaml
-21849563224
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\App.xaml
+4-1750024387
 
-7-1570122230
-68325388805
-ConnectionDialog.xaml;MainWindow.xaml;
+101021345271
+68905150912
+ConnectionDialog.xaml;CreateTablePanel.xaml;MainWindow.xaml;TableAttributeListItem.xaml;
 
 False
 

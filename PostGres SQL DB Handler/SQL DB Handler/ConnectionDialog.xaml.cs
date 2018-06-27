@@ -1,22 +1,22 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
 namespace SQL_DB_Handler
 {
-    /// <summary>
-    /// Interaction logic for ConnectionDialog.xaml
-    /// </summary>
-    public partial class ConnectionDialog : UserControl
+    /// Connection Dialog to connect to the specified Database
+   
+    public partial class ConnectionDialog : Window
     {
         public ConnectionDialog()
         {
             InitializeComponent();
         }
 
-        private void connectDB(object sender, System.Windows.RoutedEventArgs e)
+        private void connectDB(object sender, RoutedEventArgs e)
         {
-            if (((App)Application.Current).connObj == null)
-                ((App)Application.Current).connObj = ConnectionHelper.GetSQLConnectionObject(new string[] { server.Text, port.Text, userId.Text, password.Text, database.Text });
+            //if (((App)Application.Current).connObj == null)
+            //    ((App)Application.Current).connObj = ConnectionHelper.GetSQLConnectionObject(new string[] { server.Text, port.Text, userId.Text, password.Text, database.Text });
+            new MainWindow(ConnectionHelper.GetSQLConnectionObject(new string[] { server.Text, port.Text, userId.Text, password.Text, database.Text })).Show();
+            Close();
         }
     }
 }
