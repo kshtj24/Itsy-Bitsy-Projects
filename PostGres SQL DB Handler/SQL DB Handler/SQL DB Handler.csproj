@@ -69,6 +69,9 @@
     <Compile Include="CreateTablePanel.xaml.cs">
       <DependentUpon>CreateTablePanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteTableListItem.xaml.cs">
+      <DependentUpon>DeleteTableListItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QueryStrings.cs" />
     <Compile Include="TableAttributeListItem.xaml.cs">
       <DependentUpon>TableAttributeListItem.xaml</DependentUpon>
@@ -78,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateTablePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteTableListItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

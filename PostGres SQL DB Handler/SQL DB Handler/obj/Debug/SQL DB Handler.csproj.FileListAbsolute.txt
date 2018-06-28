@@ -35,20 +35,22 @@ D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\bin\De
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\bin\Debug\System.ValueTuple.xml
-D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler.csprojResolveAssemblyReference.cache
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\ConnectionDialog.g.cs
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\CreateTablePanel.g.cs
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\DeleteTableListItem.g.cs
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\MainWindow.g.cs
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\TableAttributeListItem.g.cs
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\App.g.cs
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler_MarkupCompile.cache
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler_MarkupCompile.lref
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\ConnectionDialog.baml
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\CreateTablePanel.baml
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\DeleteTableListItem.baml
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\MainWindow.baml
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\TableAttributeListItem.baml
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler.g.resources
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL_DB_Handler.Properties.Resources.resources
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler.csproj.GenerateResource.Cache
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler.exe
 D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler.pdb
-D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\CreateTablePanel.g.cs
-D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\TableAttributeListItem.g.cs
-D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\CreateTablePanel.baml
-D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\TableAttributeListItem.baml
+D:\My Projects\Itsy-Bitsy-Projects\PostGres SQL DB Handler\SQL DB Handler\obj\Debug\SQL DB Handler.csprojResolveAssemblyReference.cache
