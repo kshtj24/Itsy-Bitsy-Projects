@@ -9,7 +9,8 @@
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Table Name" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="17" Margin="122,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
-        <StackPanel x:Name="attributesPanel" HorizontalAlignment="Left" Height="249" Margin="10,41,0,0" VerticalAlignment="Top" Width="280">
+        <ScrollViewer  HorizontalAlignment="Left" Height="249" Margin="10,41,0,0" VerticalAlignment="Top" Width="280">
+        <StackPanel x:Name="attributesPanel">
             <Grid Margin="1" Background="White">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -23,7 +24,7 @@
             </Grid>
             
         </StackPanel>
-
+        </ScrollViewer>
 
     </Grid>
 </UserControl>

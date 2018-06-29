@@ -21,7 +21,6 @@ namespace SQL_DB_Handler
             return connection;
         }
 
-
         public static DataTable GetAllTables(string sql, NpgsqlConnection connection)
         {
             runQuery(sql, connection);

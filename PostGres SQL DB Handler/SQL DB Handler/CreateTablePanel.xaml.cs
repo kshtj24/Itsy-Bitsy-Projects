@@ -35,6 +35,30 @@ namespace SQL_DB_Handler
                 item.Name = "Attribute" + i.ToString();
                 attributesPanel.Children.Add(item);
             }
+
+            Button button = new Button();
+            button.Content = "Add Table";
+            button.Click += new RoutedEventHandler(createTables);
+            attributesPanel.Children.Add(button);
+        }
+
+
+        private void createTables(object sender, RoutedEventArgs e)
+        {
+            List<string> tableAttributesList = new List<string>();
+            for (int i = 0; i < 10; i++)
+            {
+                //TableAttributeListItem item = attributesPanel.FindName("Attribute" + i.ToString());
+
+                foreach (TableAttributeListItem item in attributesPanel.Children)
+                {
+                    if (item.attributeName.Text != "" || item.attributeName.Text != null)
+                    {
+                        string temp = (item.attributeName.Text).Replace(' ', '_') + item.dataType.SelectedItem;
+                        tableAttributesList.Add(temp);
+                    }
+                }
+            }
         }
     }
 }
