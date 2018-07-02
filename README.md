@@ -16,7 +16,7 @@ Android client application for the IMDb server provided by **OMDb(www.omdbapi.co
 
 
 #### Quotes App
-Windows based Python application which works as a client for **Quotes on Design(quotesondesign.com/api-v4-0/)**. App uses requests, wxPython and bs4(BeautifulSoup) libraries to fetch the data in JSON format and then display it in a text box.
+Windows based Python application which works as a client for **Quotes on Design(http://quotesondesign.com/api-v4-0/)**. App uses requests, wxPython and bs4(BeautifulSoup) libraries to fetch the data in JSON format and then display it in a text box.
 
 #### Song Lyrics App
 Python client app for **Lyrics.ovh(https://lyricsovh.docs.apiary.io/#)**. App uses request and wxPython to fetch and display data.
