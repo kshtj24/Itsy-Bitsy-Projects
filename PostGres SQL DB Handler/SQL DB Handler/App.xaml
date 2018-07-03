@@ -1,9 +1,0 @@
-﻿<Application x:Class="SQL_DB_Handler.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:SQL_DB_Handler"
-             StartupUri="ConnectionDialog.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
-</Application>

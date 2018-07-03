@@ -20,6 +20,3 @@ Windows based Python application which works as a client for **Quotes on Design(
 
 #### Song Lyrics App
 Python client app for **Lyrics.ovh(https://lyricsovh.docs.apiary.io/#)**. App uses request and wxPython to fetch and display data.
-
-#### PostGres SQL DB Handler
-***Ongoing work***. WPF Application to make basic changes to PostGres database without writing Scripts.
