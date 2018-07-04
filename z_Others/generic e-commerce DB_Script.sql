@@ -53,8 +53,8 @@ create table if not exists languages(
 languages_id int primary key,
 name varchar(32) not null,
 code char(2) not null,
-image varchar(64)
-directory varchar(32)
+image varchar(64),
+directory varchar(32),
 sort_order int
 );
 
@@ -116,7 +116,7 @@ customers_basket_id int primary key,
 customers_id int not null,
 products_id text not null,
 customers_basket_quantity smallint,
-final_price decimal(8,2)
+final_price decimal(8,2),
 customers_basket_date_added timestamp not null
 );
 
@@ -144,7 +144,7 @@ products_options_values_id int
 
 create table if not exists customers_info(
 customers_info_id int primary key,
-customers_info_date_of_last_logon timestamp
+customers_info_date_of_last_logon timestamp,
 customers_info_number_of_logons int,
 customers_info_date_account_created timestamp,
 customers_info_date_account_last_modified timestamp
@@ -193,4 +193,183 @@ orders_date_finished timestamp not null,
 comments text,
 currency char(3),
 currency_value decimal(16,6)
+);
+
+create table if not exists address_format(
+address_format_id int primary key,
+address_format varchar(128),
+address_summary varchar(48)
+);
+
+create table if not exists tax_class(
+tax_class_id int primary key,
+tax_class_title varchar(32) not null,
+tax_class_description varchar(255) not null,
+last_modified timestamp,
+date_added timestamp
+);
+
+create table if not exists zones(
+zone_id int primary key,
+zone_country_id int not null,
+zone_code varchar(5) not null,
+zone_name varchar(32) not null
+);
+
+create table if not exists countries(
+countries_id int primary key,
+countries_name varchar(64) not null,
+countries_iso_code_2 char(2),
+countries_iso_code_3 char(3),
+address_format_id int
+);
+
+create table if not exists address_book(
+customers_id int primary key,
+address_book_id int not null,
+entry_gender char(1),
+entry_company varchar(32),
+entry_firstname varchar(32) not null,
+entry_lastname varchar(32) not null,
+entry_street_address varchar(64) not null,
+entry_suburb varchar(32),
+entry_postcode varchar(10) not null,
+entry_city varchar(32) not null,
+entry_state varchar(32) not null,
+entry_country_id int,
+entry_zone_id int
+);
+
+create table if not exists orders_products(
+orders_products_id int primary key,
+orders_id int not null,
+products_id int not null,
+products_name varchar(64),
+products_price decimal(10,2) not null,
+final_price decimal(10,2) not null,
+products_tax decimal(9,4) not null,
+products_quantity smallint not null
+);
+
+create table if not exists orders_products_attributes(
+orders_products_attributes_id int primary key,
+orders_id int not null,
+orders_products_id int not null,
+products_options varchar(32),
+products_options_values varchar(32),
+options_values_price decimal(10,2) not null,
+price_prefix char(1)
+);
+
+create table if not exists orders_status(
+orders_status_id int primary key,
+language_id int,
+orders_status_name varchar(32) not null
+);
+
+create table if not exists whos_online(
+customer_id int primary key,
+full_name varchar(32) not null,
+session_id varchar(128) not null,
+ip_address varchar(15) not null,
+time_entry varchar(14) not null,
+time_last_click varchar(14),
+last_page_url varchar(64)
+);
+
+create table if not exists sessions(
+sesskey varchar(32) primary key,
+expiry int,
+sessvalue text
+);
+
+create table if not exists banners(
+banners_id int primary key,
+banners_title varchar(64) not null,
+banners_url varchar(64) not null,
+banners_image varchar(64),
+banners_group varchar(10),
+expires_impressions int,
+expires_date timestamp,
+date_added timestamp,
+date_status_change timestamp,
+status int
+);
+
+create table if not exists banners_history(
+banners_history_id int primary key,
+banners_id int not null,
+banners_shown int,
+banners_clicked int,
+banners_history_date timestamp
+);
+
+create table if not exists configuration(
+configuration_id int primary key,
+configuration_title varchar(64),
+configuration_key varchar(64),
+configuration_value varchar(255),
+configuration_description varchar(255),
+configuration_group_id int,
+sort_order int,
+last_modified timestamp,
+date_added timestamp,
+use_function varchar(32),
+set_function varchar(32)
+);
+
+create table if not exists configuration_group(
+configuration_group_id int primary key,
+configuration_group_title varchar(64),
+configuration_group_description varchar(255),
+sort_order int,
+);
+
+create table if not exists zones_to_geo_zones(
+association_id int primary key,
+zone_country_id int,
+zone_id int,
+geo_zone_id int,
+last_modified timestamp,
+date_added timestamp
+);
+
+create table if not exists geo_zones(
+geo_zone_id int primary key,
+geo_zone_name varchar(32),
+geo_zone_description varchar(255),
+last_modified timestamp,
+date_added timestamp
+);
+
+create table if not exists tax_rates(
+tax_rates_id int primary key,
+tax_zone_id int,
+tax_class_id int,
+tax_priority int,
+tax_rate decimal(9,4) not null,
+tax_description varchar(255) not null,
+last_modified timestamp,
+date_added timestamp
+);
+
+create table if not exists counter(
+startdate char(8),
+counter bigint
+);
+
+create table if not exists counter_history(
+counter_month char(8),
+counter bigint
+);
+
+create table if not exists currencies(
+currencies_id int primary key,
+title varchar(32),
+code char(3),
+symbol_left varchar(12),
+symbol_right varchar(12),
+decimal_point char(1),
+thousands_point char(1),
+decimal_places char(1)
 );
