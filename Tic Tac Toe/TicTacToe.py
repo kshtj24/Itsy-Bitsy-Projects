@@ -43,35 +43,44 @@ def validateCharacters(*args):
 		else:
 			return True
 			
-#initializing the 2 dim array as board and printing the start message
-board = [['-','-','-'],['-','-','-'],['-','-','-']]
-print("Let's play some Tic Tac Toe:")
-printBoard(board)
-
-#taking the choice of O or X from player1
-player1 = (input("Player 1, please select your mark 'O' or 'X' :")).upper()
-
-if player1 == 'X':
-	player2 = 'O'
-else:
-	player2 = 'X'
-
-chance = 1
-while(True):
-	location = input(f"Player {abs(chance)}, please enter the row and column to put your mark:").split(' ')
-	if chance == 1:
-		board[int(location[0]) - 1][int(location[1]) - 1] = player1
-	else:
-		board[int(location[0]) - 1][int(location[1]) - 1] = player2
-	
+			
+isReplay = True
+while(isReplay):
+	#initializing the 2 dim array as board and printing the start message
+	board = [['-','-','-'],['-','-','-'],['-','-','-']]
+	print("Let's play some Tic Tac Toe:")
 	printBoard(board)
+
+	#taking the choice of O or X from player1
+	player1 = (input("Player 1, please select your mark 'O' or 'X' :")).upper()
+
+	if player1 == 'X':
+		player2 = 'O'
+	else:
+		player2 = 'X'
+
+	chance = 1
+	while(True):
+		location = input(f"Player {abs(chance)}, please enter the row and column to put your mark:").split(' ')
+		if chance == 1:
+			board[int(location[0]) - 1][int(location[1]) - 1] = player1
+		else:
+			board[int(location[0]) - 1][int(location[1]) - 1] = player2
 	
-	if(checkWinRowWise(board) or checkWinColumnWise(board) or checkWinDiagonally(board)):
-		print(f"Congratulations !!! Player {abs(chance)} has won the game")
-		break
+		printBoard(board)
 	
-	if not any('-' in arr for arr in board):
-		print("It's a Tie")
-		break
-	chance = ~chance
+		if(checkWinRowWise(board) or checkWinColumnWise(board) or checkWinDiagonally(board)):
+			print(f"Congratulations !!! Player {abs(chance)} has won the game")
+			replay = input("Do you want to replay Y/N:")
+			if replay == 'N' or replay == 'n':
+				isReplay = False				
+			break
+	
+		if not any('-' in arr for arr in board):
+			print("It's a Tie")
+			replay = input("Do you want to replay Y/N:")
+			if replay == 'N' or replay == 'n':
+				isReplay = False
+			break
+		chance = ~chance
 	
