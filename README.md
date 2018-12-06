@@ -7,6 +7,8 @@ Applications, code pieces, proof of concepts and learning exercises for various 
 #### 4bit Binary rep LEDs
 Raspberry pi based python code along with extended circuit to display 4 bit decimal integer to binary by using Light Emitting Diodes. ...(Working)
 
+#### Flask_Webapp
+Basic web application to demonstrate the usage to python with Flask framework for learning purposes only.
 
 #### LEDBlinker_ClientServer
 Small app to create a simple Java server on Raspberry Pi and then send requests from a client to turn a LED (Light Emitting Diode) ON or OFF.
