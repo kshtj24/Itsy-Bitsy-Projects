@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 
-class Rpi_Code:
+class RPi_Code:
 
 	#Converting the decimal value received to binary and returning the reversed string
 	def convertToBinary(self, number):
