@@ -6,3 +6,16 @@ Read write from serial port
 https://www.instructables.com/id/Read-and-write-from-serial-port-with-Raspberry-Pi/
 https://electrosome.com/uart-raspberry-pi-python/
 http://abyz.me.uk/rpi/pigpio/python.html
+
+
+-hosting
+https://www.e-tinkers.com/2016/11/hosting-wordpress-on-raspberry-pi-part-5-dedicated-ip-domain-name-and-dns/
+https://raspberrypi.stackexchange.com/questions/71917/making-webserver-on-raspberry-pi-3
+http://raspberrywebserver.com/serveradmin/get-your-raspberry-pi-web-site-on-line.html
+
+
+-windows iot core setup
+https://www.windowscentral.com/how-install-windows-10-iot-raspberry-pi-3
+
+dynamic dns -
+https://my.noip.com
