@@ -8,7 +8,7 @@ Applications, code pieces, proof of concepts and learning exercises for various 
 Raspberry pi based python code along with extended circuit to display 4 bit decimal integer to binary by using Light Emitting Diodes. ...(Working)
 
 #### Bluetooth-serial
-Python code to send data over bluetooth and read the data through the Serial input (RX pin) on raspberry pi. Also can check the serial communication by shorting RX and TX pins on RPi and running serial_read and serial_write scripts.
+Python code to send data over bluetooth module (HC-05) and read the data through the Serial input (RX pin) on raspberry pi. Also can check the serial communication by shorting RX and TX pins on RPi and running serial_read and serial_write scripts.
 
 #### Flask_Webapp
 Basic web application to demonstrate the usage to python with Flask framework for learning purposes only.
