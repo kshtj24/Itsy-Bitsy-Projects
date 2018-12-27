@@ -19,3 +19,8 @@ https://www.windowscentral.com/how-install-windows-10-iot-raspberry-pi-3
 
 dynamic dns -
 https://my.noip.com
+
+
+Flask application deployment-
+https://iotbytes.wordpress.com/python-flask-web-application-on-raspberry-pi-with-nginx-and-uwsgi/
+https://vladikk.com/2013/09/12/serving-flask-with-nginx-on-ubuntu/
