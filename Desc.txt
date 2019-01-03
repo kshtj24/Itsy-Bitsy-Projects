@@ -1,0 +1,11 @@
+Layers --- 
+
+1. Web Server for communicating with raspberry pi to give commands.
+
+2. BT interfacing logic to be written on raspberry pi master for passing commands to the slave circuit.
+	-connect with BT module.
+	-decide which slave to connect to. -- mapping required on master side
+	-decide which device to operate connected to the slave.
+	-
+
+3. Arduino microcontroller programming logic to control the connected devices.
