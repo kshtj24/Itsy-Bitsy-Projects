@@ -24,3 +24,6 @@ https://my.noip.com
 Flask application deployment-
 https://iotbytes.wordpress.com/python-flask-web-application-on-raspberry-pi-with-nginx-and-uwsgi/
 https://vladikk.com/2013/09/12/serving-flask-with-nginx-on-ubuntu/
+
+-working with data on github pages
+https://stackoverflow.com/questions/31655085/database-on-a-personal-github-page
