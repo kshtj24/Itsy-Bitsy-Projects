@@ -1,9 +1,10 @@
 import tkinter as tk
+import requests as rq
 
-
-def getFollowersFromGit():
-
-
+def getFollowersFromGit(username):
+    url = "https://api.github.com/users/"+ username +"/followers"
+    response = rq.get(url)
+    return response.content
 
 
 mainWindow = tk.Tk()
@@ -19,6 +20,7 @@ pane1.add(oldList)
 pane1.add(newList)
 pane2.add(updateFollowers)
 
+print(getFollowersFromGit())
 pane1.pack()
 pane2.pack()
 mainWindow.mainloop()
