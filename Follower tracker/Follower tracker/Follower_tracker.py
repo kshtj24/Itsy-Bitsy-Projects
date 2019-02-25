@@ -31,7 +31,7 @@ pane1.add(oldList)
 pane1.add(newList)
 pane2.add(updateFollowers)
 
-print(getFollowersFromGit('kshtj24'))
+newList.insert('end',*getFollowersFromGit('kshtj24'))
 pane1.pack()
 pane2.pack()
 mainWindow.mainloop()
