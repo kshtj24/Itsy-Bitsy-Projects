@@ -30,18 +30,15 @@ namespace MCSD
             switch (SortBy) 
             {
                 case CompareField.Name:
-                    return x.Name.CompareTo(y.Name);
-                    break;
+                    return x.Name.CompareTo(y.Name);                    
                 case CompareField.MaxMph:
-                    return x.MaxMph.CompareTo(y.MaxMph);
-                    break;
+                    return x.MaxMph.CompareTo(y.MaxMph);                    
                 case CompareField.HorsePower:
-                    return x.HorsePower.CompareTo(y.HorsePower);
-                    break;
+                    return x.HorsePower.CompareTo(y.HorsePower);                    
                 case CompareField.Price:
-                    return x.Price.CompareTo(y.Price);
-                    break;
+                    return x.Price.CompareTo(y.Price);                    
             }
+            return x.Name.CompareTo(y.Name);
         }
     }
 
