@@ -3,3 +3,8 @@ C:\Users\acc.guest\Desktop\MCSD\MCSD\bin\Debug\MCSD.exe
 C:\Users\acc.guest\Desktop\MCSD\MCSD\bin\Debug\MCSD.pdb
 C:\Users\acc.guest\Desktop\MCSD\MCSD\obj\Debug\MCSD.exe
 C:\Users\acc.guest\Desktop\MCSD\MCSD\obj\Debug\MCSD.pdb
+C:\Users\acc.guest\Desktop\itsy-bitsy-projects\MCSD\MCSD\obj\Debug\MCSD.exe
+C:\Users\acc.guest\Desktop\itsy-bitsy-projects\MCSD\MCSD\obj\Debug\MCSD.pdb
+C:\Users\acc.guest\Desktop\itsy-bitsy-projects\MCSD\MCSD\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\acc.guest\Desktop\itsy-bitsy-projects\MCSD\MCSD\bin\Debug\MCSD.exe
+C:\Users\acc.guest\Desktop\itsy-bitsy-projects\MCSD\MCSD\bin\Debug\MCSD.pdb
