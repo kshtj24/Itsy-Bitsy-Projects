@@ -15,11 +15,11 @@ namespace MCSD
             return (FirstName == other.FirstName && LastName == other.LastName);
         }
 
-        public object Clone(Person person)
+        public object Clone()
         {
             Person other = new Person();
-            other.FirstName = person.FirstName;
-            other.LastName = person.LastName;
+            other.FirstName = FirstName;
+            other.LastName = LastName;
 
             return other;
         }

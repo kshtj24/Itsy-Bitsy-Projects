@@ -10,12 +10,16 @@ namespace MCSD
         //IEquatable driver code
         static void Main(string[] args)
         {
-            List<Person> persons = new List<Person>();
-
             //ICloneable interface driver
+            //Person a = new Person();
+            //a.FirstName = "Annie";
+            //a.LastName = "Walters";
 
+            //Person b = (Person)a.Clone();
+            
 
             //IEquatable interface driver
+            //List<Person> persons = new List<Person>();
             //while(true)
             //{
             //    Person person = new Person();
