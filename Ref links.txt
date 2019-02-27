@@ -27,3 +27,13 @@ https://vladikk.com/2013/09/12/serving-flask-with-nginx-on-ubuntu/
 
 -working with data on github pages
 https://stackoverflow.com/questions/31655085/database-on-a-personal-github-page
+
+-IOT Core setup on RPi
+https://www.plextek.com/insights/getting-started-with-iot-core-and-c-on-the-raspberry-pi/
+
+-pi simulator for Azure IOT Hub
+https://azure-samples.github.io/raspberry-pi-web-simulator/#Getstarted
+
+
+-Connect Raspberry Pi online simulator to Azure IoT Hub (Node.js)
+https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started#run-a-sample-application-on-pi-web-simulator
