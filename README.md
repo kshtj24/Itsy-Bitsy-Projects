@@ -13,6 +13,9 @@ Python code to send data over bluetooth module (HC-05) and read the data through
 #### Flask_Webapp
 Basic web application to demonstrate the usage to python with Flask framework for learning purposes only.
 
+#### Follower Tracker
+Python based application to get GitHub followers list and save it offline. And compare the offline list with GitHub list to check who has unfollowed you.
+
 #### LEDBlinker_ClientServer
 Small app to create a simple Java server on Raspberry Pi and then send requests from a client to turn a LED (Light Emitting Diode) ON or OFF.
 
