@@ -1,4 +1,5 @@
 import tkinter as tk
+from main_client import chat_backend
 
 def create_chat_window():
     main_window = tk.Tk()
@@ -19,9 +20,11 @@ def create_top_frame(window):
     top_frame.place(x=10, y=10)
 
 def create_bottom_frame(window):
+    #Creating the object of chat_backend class
+    m_object = chat_backend()    
     bottom_frame = tk.Frame(window, bg='blue', height=100, width=397)
     message_box = tk.Text(bottom_frame)
-    send_btn = tk.Button(bottom_frame, text='Send')
+    send_btn = tk.Button(bottom_frame, text='Send', command = lambda:m_object.send_message(message_box.get('1.0',tk.END)))
     message_box.place(x=0,y=0)
     send_btn.place(x=355,y=75)
     bottom_frame.place(x=10, y=320)
