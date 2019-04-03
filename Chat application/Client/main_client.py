@@ -11,9 +11,10 @@ class chat_backend():
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.connect((self.HOST, self.PORT))
         
-    def send_message(self, message):
+    def send_message(self, message, commandtype='send'):
         while True:
-            self.server.send(message.encode('ascii'))
+            json_str = '{"to":getsomeip, "command":"' + commandtype + '"' + '"message":"'+ message +'"}'            
+            self.server.send(json_str)
             data = self.server.recv(1024)
             return data
         

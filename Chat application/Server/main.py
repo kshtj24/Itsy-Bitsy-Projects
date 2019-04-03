@@ -11,21 +11,17 @@ class MultiThreadedChatServer():
     """
     Chat server using sockets and threading
     """
-    
 
-    def close_client_connection():
-        pass
+    def close_client_connection(self, client):
+        client.close()        
 
     def handle_incoming_connection(self, client):
         while True:
             data = client.recv(1024)
             print(data)
-            if not data[0]:
-                print('Bye')
-                PRINT_LOCK.release()
-                break
-            client.sendall(data[::-1])
-        client.close()
+            #TODO - logic to be inserted for checking the request type. ie Close connection or send message
+            #TODO - logic to be inserted for adding client to the list of clients
+            #TODO - logic to be inserted for sending the message to the client specified in the data
 
     def accept_incoming_connection(self):
         host = 'localhost'
@@ -39,7 +35,7 @@ class MultiThreadedChatServer():
             client, addr = server.accept()
             PRINT_LOCK.acquire()
             print('Connected to :', addr[0], ':', addr[1])
-            threading._start_new_thread(self.handle_incoming_connection, (client, None))
+            threading._start_new_thread(self.handle_incoming_connection, (client,))
         server.close()
 
 if __name__ == '__main__':
