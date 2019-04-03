@@ -5,17 +5,15 @@ import socket
 
 class chat_backend():
     
-    def __init__(self, HOST='localhost', PORT=9999):
-        self.HOST = HOST
-        self.PORT = PORT
-    
+    def __init__(self):
+        self.HOST = 'localhost'
+        self.PORT = 9999
+        self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server.connect((self.HOST, self.PORT))
+        
     def send_message(self, message):
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as mSocket:
-            mSocket.connect((self.HOST, self.PORT))
-            mSocket.sendall(message.encode())
-
-#HOST, PORT = 'localhost', 9999
-#
-#with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as mSocket:
-#    mSocket.connect((HOST, PORT))
-#    mSocket.sendall(input().encode())
+        while True:
+            self.server.send(message.encode('ascii'))
+            data = self.server.recv(1024)
+            return data
+        
