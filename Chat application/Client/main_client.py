@@ -12,7 +12,7 @@ class chat_backend():
     def send_message(self, message):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as mSocket:
             mSocket.connect((self.HOST, self.PORT))
-            mSocket.sendall(input().encode())
+            mSocket.sendall(message.encode())
 
 #HOST, PORT = 'localhost', 9999
 #
