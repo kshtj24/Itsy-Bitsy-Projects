@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Follower Tracker Service</string>
+    <string name="dialog_button_text">Set</string>
+    <string name="user_id_toast">Please enter your GitHub user Id to continue</string>
 </resources>
