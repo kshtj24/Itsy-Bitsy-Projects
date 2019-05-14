@@ -1,5 +1,7 @@
 package com.mr.j;
 
+import android.content.Context;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -7,54 +9,65 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class GitHubAPICaller {
+class GitHubAPICaller {
 
     RequestQueue requestQueue;
     JsonArrayRequest arrayRequest;
+    Context context;
 
-    private void callAPI(String url, String user, int pageNo, final VolleyCallback callback) {
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, String.format(url, user, pageNo), "", new Response.Listener<JSONObject>() {
+    GitHubAPICaller(Context context) {
+        this.context = context;
+    }
+
+    void getResponse(String url, final VolleyCallback callback) {
+
+        requestQueue = Singleton.getInstance(context).getRequestQueue();
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, "", new Response.Listener<JSONArray>() {
             @Override
-            public void onResponse(JSONObject response) {
+            public void onResponse(JSONArray response) {
                 callback.onSuccessResponse(response);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                callback.onErrorResponse(error.getMessage());
             }
         });
 
+        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+
     }
 
-    private JSONObject getFollowers(String user, int pageNo) {
-        return null;
-    }
+//    private JSONObject getFollowers(String user, int pageNo) {
+//        return null;
+//    }
+//
+//    private JSONObject getFollowing(String user, int pageNo) {
+//        return null;
+//    }
+//
+//    protected ArrayList<String> getValues(String user, int type, int pageNo) {
+//        JSONObject response = new JSONObject();
+//        switch (type) {
+//            case 0:
+//                response = getFollowers(user, pageNo);
+//                break;
+//
+//            case 1:
+//                response = getFollowing(user, pageNo);
+//                break;
+//        }
+//
+//        return null;
+//    }
 
-    private JSONObject getFollowing(String user, int pageNo) {
-        return null;
-    }
-
-    protected ArrayList<String> getValues(String user, int type, int pageNo) {
-        JSONObject response = new JSONObject();
-        switch (type) {
-            case 0:
-                response = getFollowers(user, pageNo);
-                break;
-
-            case 1:
-                response = getFollowing(user, pageNo);
-                break;
-        }
-
-        return null;
-    }
-
-    private ArrayList<String> parseJSONObj(JSONObject response) {
-        return null;
-    }
+//    private ArrayList<String> parseJSONObj(JSONObject response) {
+//        return null;
+//    }
 }
