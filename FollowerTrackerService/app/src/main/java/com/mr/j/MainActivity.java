@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,17 +16,23 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
-    ArrayAdapter<String> followersListAdapter;
+    CustomAdapter followersListAdapter;
     ListView followersList;
+    int pageNo = 1;
 
+    /*----Lifecycle methods----*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         if (isFirstRun()) {
             final Dialog dialog = new Dialog(MainActivity.this);
@@ -42,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     editSharedPreferences(Constants.userIdKey, userId.getText().toString());
                     Toast.makeText(MainActivity.this, "UserId set", Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
-                    getFollowers(1);
+                    getFollowers();
 
                 }
             });
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /*----methods----*/
     private String getSharedPreferencesValue(String key) {
         sharedPreferences = getSharedPreferences(Constants.preferenceName, Context.MODE_PRIVATE);
         return sharedPreferences.getString(key, "");
@@ -90,26 +98,67 @@ public class MainActivity extends AppCompatActivity {
         }
 
         followersList = findViewById(R.id.followersList);
-        followersListAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1);
+        followersList.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                int threshold = 1;
+                int count = followersList.getCount();
+
+                if (scrollState == SCROLL_STATE_IDLE)
+                    if (followersList.getLastVisiblePosition() >= count - threshold) {
+                pageNo++;
+                getFollowers();
+            }
+        }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            }
+        });
     }
 
+
     /*----API Calling methods----*/
-    private void getFollowers(int pageNo) {
+    private void getFollowers() {
         GitHubAPICaller caller = new GitHubAPICaller(MainActivity.this);
         caller.getResponse(String.format(Constants.followerUrl, Constants.userIdValue, pageNo), new VolleyCallback() {
             @Override
             public void onSuccessResponse(JSONArray result) {
-                Toast.makeText(MainActivity.this,result.toString(), Toast.LENGTH_SHORT).show();
+                populateFollowers(result);
             }
 
             @Override
             public void onErrorResponse(String error) {
-            Toast.makeText(MainActivity.this, "Error occurred", Toast.LENGTH_LONG).show();
-        }
-    });
+                Toast.makeText(MainActivity.this, error, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void getFollowing() {
 
+    }
+
+    private void populateFollowers(JSONArray jsonArray) {
+        try {
+            ArrayList<UserItem> users = new ArrayList<>();
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject tempObj = jsonArray.getJSONObject(i);
+                users.add(new UserItem(tempObj.getString(Constants.gitHubUsernameKey), tempObj.getString(Constants.getGitHubUserIdKey)));
+            }
+
+            if (followersListAdapter == null) {
+                followersListAdapter = new CustomAdapter(MainActivity.this, R.layout.user_list, users);
+                followersList.setAdapter(followersListAdapter);
+            } else {
+                followersListAdapter.addAll(users);
+                followersListAdapter.notifyDataSetChanged();
+            }
+
+            //todo handle adding more elements to the listview in the else section
+
+        } catch (JSONException exception) {
+            Toast.makeText(MainActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -14,6 +14,10 @@ class Constants {
 
     static String followerUrl = "https://api.github.com/users/%s/followers?page=%d";
 
-    static String followingUrl = "https://api.github.com/users/{0}/following?page={1}";
+    static String followingUrl = "https://api.github.com/users/%s/following?page=%d";
+
+    static String gitHubUsernameKey = "login";
+
+    static String getGitHubUserIdKey = "id";
 
 }
