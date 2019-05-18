@@ -20,4 +20,6 @@ class Constants {
 
     static String getGitHubUserIdKey = "id";
 
+    static String getGitHubUserImageUrl = "avatar_url";
+
 }

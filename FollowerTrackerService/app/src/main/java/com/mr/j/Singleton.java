@@ -61,4 +61,8 @@ class Singleton {
     public ImageLoader getImageLoader() {
         return mImageLoader;
     }
+
+    public void cancelPendingRequest(Object tag){
+
+    }
 }

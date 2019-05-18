@@ -4,6 +4,7 @@ package com.mr.j;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -106,10 +107,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (scrollState == SCROLL_STATE_IDLE)
                     if (followersList.getLastVisiblePosition() >= count - threshold) {
-                pageNo++;
-                getFollowers();
+                        pageNo++;
+                        getFollowers();
+                    }
             }
-        }
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
@@ -131,6 +132,11 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(String error) {
                 Toast.makeText(MainActivity.this, error, Toast.LENGTH_LONG).show();
             }
+
+            @Override
+            public void onImageResponse(Bitmap image) {
+
+            }
         });
     }
 
@@ -144,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject tempObj = jsonArray.getJSONObject(i);
-                users.add(new UserItem(tempObj.getString(Constants.gitHubUsernameKey), tempObj.getString(Constants.getGitHubUserIdKey)));
+                users.add(new UserItem(tempObj.getString(Constants.gitHubUsernameKey), tempObj.getString(Constants.getGitHubUserIdKey), tempObj.getString(Constants.getGitHubUserImageUrl)));
             }
 
             if (followersListAdapter == null) {
@@ -154,9 +160,6 @@ public class MainActivity extends AppCompatActivity {
                 followersListAdapter.addAll(users);
                 followersListAdapter.notifyDataSetChanged();
             }
-
-            //todo handle adding more elements to the listview in the else section
-
         } catch (JSONException exception) {
             Toast.makeText(MainActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
         }

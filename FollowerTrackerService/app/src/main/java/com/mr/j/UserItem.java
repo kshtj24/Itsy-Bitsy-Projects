@@ -1,20 +1,26 @@
 package com.mr.j;
 
-public class UserItem {
+import android.graphics.Bitmap;
+
+class UserItem {
 
     private String username;
     private String userid;
+    private String userImageUrl;
 
-    public UserItem(String username, String userid){
+    UserItem(String username, String userid, String userImageUrl){
         this.username = username;
         this.userid = userid;
+        this.userImageUrl = userImageUrl;
     }
 
-    public String getUsername() {
+    String getUsername() {
         return username;
     }
 
-    public String getUserid(){
+    String getUserid(){
         return userid;
     }
+
+    String getUserImageUrl(){return userImageUrl;}
 }

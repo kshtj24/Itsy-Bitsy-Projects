@@ -17,9 +17,9 @@ import org.json.JSONArray;
 
 class GitHubAPICaller {
 
-    RequestQueue requestQueue;
+    private RequestQueue requestQueue;
     JsonArrayRequest arrayRequest;
-    Context context;
+    private Context context;
 
     GitHubAPICaller(Context context) {
         this.context = context;
@@ -46,9 +46,9 @@ class GitHubAPICaller {
     }
 
     void getImage(String url, final VolleyCallback callback) {
-        requestQueue = Singleton.getInstance(context).getRequestQueue();
+        ImageLoader imageLoader = Singleton.getInstance(context).getImageLoader();
 
-        ImageLoader imageLoader = new ImageLoader(url, new ImageLoader.ImageListener() {
+        imageLoader.get(url, new ImageLoader.ImageListener() {
             @Override
             public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
                 callback.onImageResponse(response.getBitmap());
@@ -60,31 +60,4 @@ class GitHubAPICaller {
             }
         });
     }
-
-//    private JSONObject getFollowers(String user, int pageNo) {
-//        return null;
-//    }
-//
-//    private JSONObject getFollowing(String user, int pageNo) {
-//        return null;
-//    }
-//
-//    protected ArrayList<String> getValues(String user, int type, int pageNo) {
-//        JSONObject response = new JSONObject();
-//        switch (type) {
-//            case 0:
-//                response = getFollowers(user, pageNo);
-//                break;
-//
-//            case 1:
-//                response = getFollowing(user, pageNo);
-//                break;
-//        }
-//
-//        return null;
-//    }
-
-//    private ArrayList<String> parseJSONObj(JSONObject response) {
-//        return null;
-//    }
 }
