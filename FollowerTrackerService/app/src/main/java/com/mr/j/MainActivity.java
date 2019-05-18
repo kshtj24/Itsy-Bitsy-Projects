@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     CustomAdapter followersListAdapter;
     ListView followersList;
-    int pageNo = 1;
+    int pageNo, followingPaging = 1;
 
     /*----Lifecycle methods----*/
     @Override
@@ -141,7 +141,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getFollowing() {
+        GitHubAPICaller caller = new GitHubAPICaller(MainActivity.this);
+        caller.getResponse(String.format(Constants.followingUrl, Constants.userIdValue, followingPaging), new VolleyCallback() {
+            @Override
+            public void onSuccessResponse(JSONArray result) {
 
+            }
+
+            @Override
+            public void onErrorResponse(String error) {
+                Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onImageResponse(Bitmap image) {
+
+            }
+        });
     }
 
     private void populateFollowers(JSONArray jsonArray) {
@@ -159,6 +175,19 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 followersListAdapter.addAll(users);
                 followersListAdapter.notifyDataSetChanged();
+            }
+        } catch (JSONException exception) {
+            Toast.makeText(MainActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void populateFollowing(JSONArray jsonArray) {
+        try {
+            ArrayList<UserItem> users = new ArrayList<>();
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject tempObj = jsonArray.getJSONObject(i);
+                users.add(new UserItem(tempObj.getString(Constants.gitHubUsernameKey), tempObj.getString(Constants.getGitHubUserIdKey), tempObj.getString(Constants.getGitHubUserImageUrl)));
             }
         } catch (JSONException exception) {
             Toast.makeText(MainActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
