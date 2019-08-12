@@ -1,0 +1,12 @@
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\Leave Tracker.csproj.CoreCompileInputs.cache
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\Leave Tracker.AssemblyInfoInputs.cache
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\Leave Tracker.AssemblyInfo.cs
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\bin\Debug\netstandard2.0\Leave Tracker.deps.json
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\bin\Debug\netstandard2.0\Leave Tracker.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\bin\Debug\netstandard2.0\Leave Tracker.pdb
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\Leave Tracker.csprojAssemblyReference.cache
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\Leave Tracker.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker\obj\Debug\netstandard2.0\Leave Tracker.pdb

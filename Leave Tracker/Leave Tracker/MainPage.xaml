@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Leave_Tracker.MainPage">
+
+    <StackLayout>
+        <FlexLayout AlignContent="Center" Direction="Column" Padding="20">
+            <Label Text="Month"/>
+            <Picker x:Name="MonthPicker" SelectedIndexChanged="UpdateCalendar"/>
+            <Label Text="Year"/>
+            <Picker x:Name="YearPicker" SelectedIndexChanged="UpdateCalendar"/>
+        </FlexLayout>
+
+        <!--Calendar control start-->
+        <Grid HeightRequest="500" RowSpacing="0" ColumnSpacing="0" x:Name="Calendar">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Sun" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="White"/>
+            <Label Text="Mon" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="White"/>
+            <Label Text="Tue" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="White"/>
+            <Label Text="Wed" Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="White"/>
+            <Label Text="Thu" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="White"/>
+            <Label Text="Fri" Grid.Row="0" Grid.Column="5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="White"/>
+            <Label Text="Sat" Grid.Row="0" Grid.Column="6" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="White"/>            
+        </Grid>
+        <!--Calendar control end-->
+    </StackLayout>
+
+</ContentPage>
