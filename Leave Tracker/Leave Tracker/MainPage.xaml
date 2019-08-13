@@ -15,7 +15,7 @@
         </FlexLayout>
 
         <!--Calendar control start-->
-        <Grid HeightRequest="500" RowSpacing="0" ColumnSpacing="0" x:Name="Calendar">
+        <Grid RowSpacing="5" ColumnSpacing="5" x:Name="Calendar">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>

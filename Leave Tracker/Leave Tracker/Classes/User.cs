@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeaveTracker
+namespace Leave_Tracker.Classes
 {
     public class User
     {

@@ -1,13 +1,17 @@
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Leave Tracker.Android.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Firebase.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\FormsViewGroup.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Java.Interop.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Leave Tracker.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\LiteDB.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Mono.Android.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\mscorlib.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Core.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Numerics.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Numerics.Vectors.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Reactive.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Runtime.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Xml.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Xml.Linq.dll
@@ -67,3 +71,4 @@ C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Web.Services.dll
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Mono.Security.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll

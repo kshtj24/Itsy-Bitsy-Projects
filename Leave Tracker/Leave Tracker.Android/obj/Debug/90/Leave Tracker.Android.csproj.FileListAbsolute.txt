@@ -496,3 +496,13 @@ C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\bin\Debug\Leave Tracker.dll.mdb
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\linksrc\Firebase.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\linksrc\LiteDB.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\linksrc\Newtonsoft.Json.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\linksrc\System.Reactive.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\linksrc\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Firebase.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\LiteDB.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Reactive.dll
+C:\Users\kshitij.a.saxena\Desktop\Leave Tracker\Leave Tracker.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll
