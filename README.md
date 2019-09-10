@@ -26,6 +26,8 @@ Simple stopwatch app in Android to demonstrate working with Handlers and activit
 #### IMDb Search Android App
 Android client application for the IMDb server provided by **OMDb(www.omdbapi.com)**. Application is divided in two activities one of which displays the results for corresponding search and other activity(item details activity) is called when any one or the results is clicked. Google's Volley library is used for REST API calls, UI mainly consists of GridView, ScrollView, TextViews and ImageViews. 
 
+#### Quotes
+Learning MVVM implementation in Xamarin forms app.
 
 #### Quotes App
 Windows based Python application which works as a client for **Quotes on Design(http://quotesondesign.com/api-v4-0/)**. App uses requests, wxPython and bs4(BeautifulSoup) libraries to fetch the data in JSON format and then display it in a text box.
