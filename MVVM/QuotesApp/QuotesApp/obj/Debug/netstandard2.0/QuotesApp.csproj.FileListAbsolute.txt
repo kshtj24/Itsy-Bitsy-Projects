@@ -1,0 +1,13 @@
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\bin\Debug\netstandard2.0\QuotesApp.deps.json
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\bin\Debug\netstandard2.0\QuotesApp.dll
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\bin\Debug\netstandard2.0\QuotesApp.pdb
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\QuotesApp.csprojAssemblyReference.cache
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\Views\WelcomePage.xaml.g.cs
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\QuotesApp.csproj.CoreCompileInputs.cache
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\QuotesApp.AssemblyInfoInputs.cache
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\QuotesApp.AssemblyInfo.cs
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\QuotesApp.dll
+C:\Users\kshitij.a.saxena\Desktop\Itsy-Bitsy-Projects\MVVM\QuotesApp\QuotesApp\obj\Debug\netstandard2.0\QuotesApp.pdb

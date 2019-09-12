@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\kshitij.a.saxena\\Desktop\\Itsy-Bitsy-Projects\\MVVM\\QuotesApp\\QuotesApp\\QuotesApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\kshitij.a.saxena\\Desktop\\Itsy-Bitsy-Projects\\MVVM\\QuotesApp\\QuotesApp\\QuotesApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kshitij.a.saxena\\Desktop\\Itsy-Bitsy-Projects\\MVVM\\QuotesApp\\QuotesApp\\QuotesApp.csproj",
+        "projectName": "QuotesApp",
+        "projectPath": "C:\\Users\\kshitij.a.saxena\\Desktop\\Itsy-Bitsy-Projects\\MVVM\\QuotesApp\\QuotesApp\\QuotesApp.csproj",
+        "packagesPath": "C:\\Users\\kshitij.a.saxena\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kshitij.a.saxena\\Desktop\\Itsy-Bitsy-Projects\\MVVM\\QuotesApp\\QuotesApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kshitij.a.saxena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Prism.Unity.Forms": {
+              "target": "Package",
+              "version": "[7.1.0.431, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[3.2.0.839982, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
